@@ -11,5 +11,15 @@ def scrape(url):
     source = response.text # extract the text content from the response object
     return source
 
+
+def extract(source):
+    """extract data from the page source"""
+    extractor = selectorlib.Extractor.from_yaml_file("extract.yml") # create an extractor object using the YAML file
+    value = extractor.extract(source)["tours"] # extract data from the source using the extractor
+    return value
+
 if __name__ == "__main__":
-    print(scrape(url))
+   scraped = scrape(url)
+   extracted = extract(scraped)
+   print(extracted)
+    
