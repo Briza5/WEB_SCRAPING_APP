@@ -1,2 +1,4 @@
 tours:
   css: "#displaytimer" 
+home:
+  css: "#temperatureId"
